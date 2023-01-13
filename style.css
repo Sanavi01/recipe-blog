@@ -12,12 +12,20 @@ html{
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 1440px;
-    padding: 52px clamp(11px, 30%, 238px);
+    padding: 52px clamp(11px, 5%, 238px);
     background-color: #ffffff;
 }
 
 /* --- HEADER --- */
+
+header{
+    max-width: 969px;
+}
 
 header h1{
     font-family: 'Playfair Display', serif ;
@@ -48,7 +56,7 @@ header p {
 
 .image-dessert{
     margin-bottom: 30px;
-    width: 969px;
+    max-width: 969px;
 }
 
 .image-dessert img{
@@ -58,6 +66,7 @@ header p {
 /* --- MAIN ---*/
 
 main{
+    max-width: 969px;
     position: relative;
 }
 
@@ -112,8 +121,8 @@ main{
 .info-title{
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
-    font-weight: 700
-    color #BDBDBD;
+    font-weight: 700;
+    color: #BDBDBD;
 }
 
 .info-description{
@@ -185,10 +194,13 @@ main{
     font-size: 16px;
 }
 
-@media (max-width: 450px){
+/* --- MEDIA FOR MOBILE --- */
+
+@media (max-width: 600px){
     body{
         padding: 10px 11px;
         width: 375px;
+        align-items: normal;
     }
 
     header h1{
@@ -269,5 +281,49 @@ main{
 
     .instruction-part{
         width: auto;
+    }
+}
+
+/* --- MEDIA FOR TABLETS --- */
+
+@media (min-width: 600px) and (max-width: 870px){
+
+    main{
+        position: static;
+    }
+    .info-baking{
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .info-baking-box{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-division{
+        align-self: center;
+    }
+
+    .info-division-mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .info-division img{
+        width: 14px;
+        height: 14px;
+    }
+
+    .info-title{
+        font-size: 10px;
+    }
+
+    .info-description{
+        font-size: 12px;
     }
 }
