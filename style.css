@@ -13,7 +13,7 @@ html{
 
 body{
     width: 1440px;
-    padding: 52px 238px;
+    padding: 52px clamp(11px, 30%, 238px);
     background-color: #ffffff;
 }
 
@@ -21,7 +21,7 @@ body{
 
 header h1{
     font-family: 'Playfair Display', serif ;
-    font-size: 48px;
+    font-size: clamp(24px, 5vh, 48px);
     color: #000000;
     margin-bottom: 10px;
 }
@@ -38,20 +38,21 @@ header h1{
 
 header p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: clamp(12px, 5vh, 14px);
     color: #4F4F4F;
     font-style: italic;
-    width: 592px;
+    width: clamp(320px, 70%, 592px);
 }
 
 /* --- PRINCIPAL IMAGE --- */
 
 .image-dessert{
     margin-bottom: 30px;
+    width: 969px;
 }
 
 .image-dessert img{
-    width: 969px;
+    width: 100%;
 }
 
 /* --- MAIN ---*/
@@ -82,8 +83,8 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 7px;
     align-items: center;
-    gap: 20px;
     padding: 50px 0px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -91,6 +92,13 @@ main{
 
 .info-division{
     display: flex;
+    gap: 7px;
+    width: 140px;
+}
+
+.info-division-mobile{
+    display: flex;
+    flex-direction: column;
     gap: 7px;
     width: 140px;
 }
@@ -114,6 +122,7 @@ main{
     font-weight: 500;
     color: #333333;
 }
+
 
 /* --- INGREDIENTS SECTION --- */
 
@@ -174,4 +183,91 @@ main{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 16px;
+}
+
+@media (max-width: 450px){
+    body{
+        padding: 10px 11px;
+        width: 375px;
+    }
+
+    header h1{
+        font-size: 24px;
+    }
+
+    .header-description p {
+        font-size: 12px;
+        width: 320px;
+    }
+
+    .image-dessert{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 352px;
+    }
+
+    main{
+        position: static;
+    }
+
+    .subtitle{
+        font-size: 18px;
+    }
+
+    .info-baking{
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .info-baking-box{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-division{
+        align-self: flex-start;
+    }
+
+    .info-division-mobile{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .info-division img{
+        width: 14px;
+        height: 14px;
+    }
+
+    .info-title{
+        font-size: 8px;
+    }
+
+    .info-description{
+        font-size: 10px;
+    }
+
+    .subtitle-2{
+        font-size: 16px;
+    }
+
+
+/* --- INFO INGREDIENTS SECTION MOBILE --- */
+
+    .ingredients-list {
+        width: auto;
+    }
+
+    .ingredients-list li {
+        font-size: 14px;
+    }
+
+/* --- INSTRUCIONS SECTION MOBILE --- */
+
+    .instruction-part{
+        width: auto;
+    }
 }
